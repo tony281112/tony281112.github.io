@@ -1,0 +1,203 @@
+:root{
+  --pink-1:#fff0f6;
+  --pink-2:#ffd6e8;
+  --pink-3:#ff8fb1;
+  --pink-4:#ff4d87;
+  --ink:#4a2a35;
+  --card:#ffffffcc;
+  --shadow: 0 20px 60px rgba(255,77,135,.25);
+}
+
+*{ box-sizing:border-box; }
+
+html,body{
+  height:100%;
+  margin:0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial;
+  color: var(--ink);
+  background: radial-gradient(1200px 800px at 20% 20%, var(--pink-2), transparent 60%),
+              radial-gradient(900px 700px at 80% 30%, #ffe0ee, transparent 55%),
+              linear-gradient(135deg, var(--pink-1), #fff);
+  overflow:hidden;
+}
+
+#hearts{
+  position:fixed;
+  inset:0;
+  width:100%;
+  height:100%;
+  z-index:0;
+}
+
+.wrap{
+  position:relative;
+  z-index:1;
+  height:100%;
+  display:grid;
+  place-items:center;
+  padding:24px;
+}
+
+.card{
+.content{
+  display: flex;
+  gap: 18px;
+  align-items: center;
+  margin-top: 16px;
+}
+
+/* Foto a la izquierda */
+.photo{
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.photo img{
+  width: 100%;
+  max-width: 200px;
+  height: 240px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 2px solid rgba(255,77,135,.18);
+  box-shadow: 0 12px 30px rgba(74,42,53,.12);
+}
+
+/* Texto a la derecha */
+.message{
+  flex: 1.4;
+  line-height: 1.6;
+}
+
+}
+
+.card::before{
+  content:"";
+  position:absolute;
+  inset:-2px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, rgba(255,77,135,.35), rgba(255,143,177,.12), rgba(255,77,135,.25));
+  z-index:-1;
+  filter: blur(10px);
+}
+
+.top{
+  text-align:center;
+  padding: 8px 8px 14px;
+}
+
+.badge{
+  display:inline-block;
+  padding: 8px 12px;
+  border-radius:999px;
+  background: rgba(255,77,135,.10);
+  border: 1px solid rgba(255,77,135,.20);
+  font-weight: 700;
+  letter-spacing:.2px;
+}
+
+h1{
+  margin: 14px 0 6px;
+  font-size: clamp(22px, 4.5vw, 30px);
+}
+
+.subtitle{
+  margin:0;
+  opacity:.85;
+}
+
+.photo{
+  margin: 14px auto 10px;
+  width: 100%;
+  display:grid;
+  place-items:center;
+}
+
+.photo img{
+  width: 85%;
+  height: 200px;        /* controla el tamaño */
+  object-fit: cover;   /* recorta sin deformar */
+  object-position: center top; /* prioriza la parte superior */
+  border-radius: 18px;
+  border: 2px solid rgba(255,77,135,.18);
+  box-shadow: 0 12px 30px rgba(74,42,53,.12);
+}
+
+.message{
+  padding: 8px 10px 2px;
+  line-height:1.55;
+}
+
+.highlight{
+  font-weight: 800;
+  color: var(--pink-4);
+}
+
+.actions{
+  display:flex;
+  gap:12px;
+  padding: 14px 6px 6px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+.btn{
+  border:none;
+  cursor:pointer;
+  padding: 12px 18px;
+  border-radius: 999px;
+  font-weight: 800;
+  transition: transform .12s ease, box-shadow .12s ease, filter .12s ease;
+  user-select:none;
+}
+
+.btn:active{ transform: scale(.98); }
+
+.yes{
+  background: linear-gradient(135deg, var(--pink-4), var(--pink-3));
+  color:white;
+  box-shadow: 0 10px 22px rgba(255,77,135,.28);
+}
+
+.no{
+  background: rgba(74,42,53,.08);
+  color: var(--ink);
+  border: 1px solid rgba(74,42,53,.12);
+}
+
+.btn:hover{
+  transform: translateY(-1px);
+  filter: brightness(1.02);
+}
+
+.footer{
+  text-align:center;
+  opacity:.78;
+  padding-top: 10px;
+}
+
+/* Modal */
+.modal{
+  position:fixed;
+  inset:0;
+  display:none;
+  place-items:center;
+  background: rgba(0,0,0,.25);
+  z-index:5;
+  padding: 24px;
+}
+
+.modal.show{ display:grid; }
+
+.modal-box{
+  width:min(420px, 92vw);
+  background:white;
+  border-radius: 22px;
+  padding: 20px;
+  border: 1px solid rgba(255,77,135,.22);
+  box-shadow: 0 24px 70px rgba(0,0,0,.22);
+  text-align:center;
+}
+
+.modal-box h2{ margin: 6px 0 10px; }
+.modal-box p{ margin:0 0 14px; }

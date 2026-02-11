@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>¿Quieres ser mi San Valentín? 💘</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Lienzo de corazones -->
+  <canvas id="hearts"></canvas>
+
+  <main class="wrap">
+    <section class="card" aria-label="Carta de San Valentín">
+      <header class="top">
+        <div class="badge">14 de febrero 💝</div>
+        <h1>¿Quieres ser mi San Valentín?</h1>
+        <p class="subtitle">Prometo risas, cariño y cero “visto” sin responder 😄</p>
+      </header>
+<div class="content">
+      <div class="photo">
+        <!-- Cambia el src por tu imagen -->
+        <img src="img/mi-foto.jpg" alt="Foto personalizada" />
+      </div>
+
+      <article class="message">
+        <p>
+          Hoy vengo con la pregunta más seria del año:
+          <span class="highlight">¿me haces el honor de ser mi San Valentín este 14 de febrero?</span>
+        </p>
+        <p>
+          Si dices que sí, te debo un abrazo largo (de los que curan el estrés) y un plan bonito 💗
+        </p>
+      </article>
+</div>
+
+      <div class="actions">
+        <button id="yesBtn" class="btn yes">Sí 💘</button>
+        <button id="noBtn" class="btn no">No 🙈</button>
+      </div>
+
+      <footer class="footer">
+        <small id="hint"></small>
+      </footer>
+    </section>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+      <div class="modal-box">
+        <h2>¡Siii! 🥰</h2>
+        <p>Entonces queda oficial: el 14 de febrero es nuestro día 💞</p>
+        <button id="closeModal" class="btn yes">Cerrar</button>
+      </div>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
